@@ -23,7 +23,7 @@ REM --> If error flag set, we do not have admin.
      CD /D "%~dp0"
 
 python get-pip.py
-pip install pydicom
+pip install pydicom numpy Pillow
 
 mkdir %userprofile%\\dcm2png
 copy dcm2png.py %userprofile%\\dcm2png

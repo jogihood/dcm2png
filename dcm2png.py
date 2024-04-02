@@ -38,6 +38,8 @@ try:
             max_val, min_val = img.max(), img.min()
             img = (img - min_val) / (max_val - min_val) * 255
             img = img.astype(np.uint8)
+            if ds.PhotometricInterpretation == "MONOCHROME1":
+                img = 255 - img
 
             filename = f"{args.output_dir}/{f.stem}.png"
             Image.fromarray(img).save(filename)
